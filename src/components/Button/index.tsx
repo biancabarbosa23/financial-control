@@ -4,7 +4,7 @@ import { styles } from "./styles";
 
 interface ButtonProps {
   text: string;
-  onPress?: void;
+  onPress(): void;
   isLoading?: boolean;
   disabled?: boolean;
 }
@@ -22,6 +22,7 @@ export function Button({
       <TouchableOpacity
         style={[styles.button, { opacity }]}
         disabled={isLoading || disabled}
+        onPress = {onPress}
       >
         {isLoading ? (
           <ActivityIndicator color={theme.colors.secondary} />
