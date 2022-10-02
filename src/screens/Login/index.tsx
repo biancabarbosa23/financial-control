@@ -1,12 +1,38 @@
-import { View, TextInput, Image } from "react-native";
+import { View, TextInput, Image, KeyboardAvoidingView, Platform } from "react-native";
 import { styles } from "./styles";
 import { Button } from "../../components/Button";
 import { theme } from "../../global/theme";
 import * as Animatable from "react-native-animatable";
+import { useState } from "react";
+import { compareAccessData } from "../../utils/auth";
+import { useEffect } from "react";
 
 export function Login() {
+  const [password, setPassword] = useState("");
+  const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    handleButtonDisabled();
+  },[password])
+  
+  const handleButtonDisabled = () => {
+    password !== "" ? setDisabled(false): setDisabled(true);
+  }
+
+  const handleLogin = async () => {
+    const access = await compareAccessData(password);
+
+    if(access) {
+      console.log("acessado");
+    } else {
+      console.log("erro");
+    }
+  }
+
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={styles.container}>
       <View style={styles.content}>
         <Animatable.View animation="flipInY" style={styles.containerImage}>
           <Image
@@ -20,9 +46,15 @@ export function Login() {
           style={styles.input}
           placeholderTextColor={theme.colors.light_blue}
           placeholder="Senha"
+          secureTextEntry={true}
+          onChangeText={(value) => setPassword(value)}
         />
-        <Button text="Entrar" />
+        <Button
+          disabled = {disabled}
+          text="Entrar" 
+          onPress={handleLogin}
+        />
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
