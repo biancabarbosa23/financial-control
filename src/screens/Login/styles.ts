@@ -35,5 +35,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 20,
     marginBottom: 50,
+    color: theme.colors.white,
   },
 });
