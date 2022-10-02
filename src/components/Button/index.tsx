@@ -25,7 +25,7 @@ export function Button({
         onPress = {onPress}
       >
         {isLoading ? (
-          <ActivityIndicator color={theme.colors.secondary} />
+          <ActivityIndicator color={theme.colors.white} />
         ) : (
           <Text style={styles.buttonText}>{text}</Text>
         )}

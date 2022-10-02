@@ -28,7 +28,6 @@ export const styles = StyleSheet.create({
   input: {
     width: 345,
     backgroundColor: theme.colors.dark_blue,
-    color: theme.colors.white,
     borderRadius: 30,
     height: 55,
     fontFamily: theme.fonts.black,
@@ -36,6 +35,5 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 20,
     marginBottom: 50,
-    color: theme.colors.white,
   },
 });

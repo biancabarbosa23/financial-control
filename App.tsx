@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
 import { useEffect } from "react";
 import {
   useFonts,
@@ -7,7 +8,7 @@ import {
   Montserrat_900Black,
 } from "@expo-google-fonts/montserrat";
 import * as SplashScreen from "expo-splash-screen";
-import { Login } from "./src/screens/Login";
+import Routes from "./src/routes/Router";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,5 +30,9 @@ export default function App() {
     return null;
   }
 
-  return <Login />;
+  return (
+    <NavigationContainer>
+      <Routes />
+    </NavigationContainer>
+  );
 }

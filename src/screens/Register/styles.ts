@@ -12,9 +12,9 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   containerImage: {
-    flex: 1,
     alignContent: "center",
     justifyContent: "center",
+    paddingTop: 60,
   },
   logo: {
     width: 200,
@@ -28,14 +28,12 @@ export const styles = StyleSheet.create({
   input: {
     width: 345,
     backgroundColor: theme.colors.dark_blue,
-    color: theme.colors.white,
     borderRadius: 30,
     height: 55,
     fontFamily: theme.fonts.black,
     fontSize: 15,
     paddingHorizontal: 20,
     paddingVertical: 20,
-    marginBottom: 50,
-    color: theme.colors.white,
+    marginBottom: 15,
   },
 });
