@@ -13,8 +13,8 @@ export const styles = StyleSheet.create({
   },
   containerImage: {
     flex: 1,
-    alignContent: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
   logo: {
     width: 200,
@@ -34,6 +34,12 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     paddingHorizontal: 20,
     paddingVertical: 20,
-    marginBottom: 50,
+    marginTop: 50,
+  },
+  date: {
+    fontSize: 14,
+    fontWeight: "900",
+    color: theme.colors.white,
+    marginVertical: 20,
   },
 });

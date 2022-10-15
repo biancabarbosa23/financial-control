@@ -8,6 +8,7 @@ export const theme = {
     yellow: "#FFD018",
     red: "#D31A30",
     green: "#17EC92",
+    label: "#C5D0EC",
   },
 
   fonts: {
